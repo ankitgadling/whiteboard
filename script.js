@@ -72,6 +72,12 @@ const drawing = (e) => {
     ctx.putImageData(snapshot, 0, 0); // adding copied canvas data on to this canvas
 
     if(selectedTool === "brush" || selectedTool === "eraser") {
+        if (selectedTool === "eraser"){
+            document.body.style.cursor = "url('icons/eraser.svg'), auto"
+        }else{
+            document.body.style.cursor="crosshair"
+        }
+        
         // if selected tool is eraser then set strokeStyle to white 
         // to paint white color on to the existing canvas content else set the stroke color to selected color
         ctx.strokeStyle = selectedTool === "eraser" ? "#fff" : selectedColor;
