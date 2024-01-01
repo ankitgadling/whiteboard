@@ -6,6 +6,7 @@ colorBtns = document.querySelectorAll(".colors .option"),
 colorPicker = document.querySelector("#color-picker"),
 clearCanvas = document.querySelector(".clear-canvas"),
 saveImg = document.querySelector(".save-img"),
+addImg = document.querySelector(".add-img"),
 ctx = canvas.getContext("2d");
 
 // global variables with default value
@@ -129,6 +130,14 @@ saveImg.addEventListener("click", () => {
     link.download = `${Date.now()}.jpg`; // passing current date as link download value
     link.href = canvas.toDataURL(); // passing canvasData as link href value
     link.click(); // clicking link to download image
+});
+
+addImg.addEventListener("change", (e) => {
+    const img = new Image(); // creating new image element
+    img.src = URL.createObjectURL(e.target.files[0]); // passing uploaded image as img src
+    img.onload = () => {
+        ctx.drawImage(img, 0, 0, canvas.width, canvas.height); // drawing uploaded image on canvas
+    }
 });
 
 canvas.addEventListener("mousedown", startDraw);

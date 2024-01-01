@@ -11,7 +11,7 @@ body{
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background: #f74aee;
+  background: black;
 }
 .container{
   display: flex;
@@ -133,8 +133,13 @@ section{
   background: #6C757D;
 }
 .buttons .save-img{
-  background: #f74aee;
-  border: 1px solid #f74aee;
+  background: black;
+  border: 1px solid black;
+}
+.add-img{
+  width: 165px;
+  margin: 2px auto;
+  padding: 2px 0;
 }
 .drawing-board{
   flex: 1;
